@@ -1,0 +1,773 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* 스플래시 스크린 스타일 */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('봉사활동_홈페이지_이미지.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+}
+
+.splash-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.2em;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* 전체 리셋 및 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #fef7f0 0%, #fdf2f8 50%, #fef3c7 100%);
+    min-height: 100vh;
+    color: #374151;
+    font-weight: 400;
+}
+
+/* 관리자 로그인 버튼 */
+.admin-button-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+}
+
+#adminBtn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #d97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#adminBtn:hover {
+    background: #d97706;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(217, 119, 6, 0.25);
+}
+
+/* 메인 컨테이너 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 사이드바 */
+.sidebar {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    margin: 24px 0;
+    padding: 40px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 24px;
+    height: fit-content;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 0 32px;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* 네비게이션 */
+.nav {
+    padding: 0 16px;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    margin-bottom: 8px;
+}
+
+.nav-item {
+    display: block;
+    padding: 16px 24px;
+    color: #6b7280;
+    text-decoration: none;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+}
+
+.nav-item:hover {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+    transform: translateX(4px);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(217, 119, 6, 0.3);
+}
+
+/* 메인 콘텐츠 */
+.content {
+    flex: 1;
+    margin-left: 32px;
+    padding: 40px 0;
+}
+
+.page {
+    display: none;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 600px;
+}
+
+.page.active {
+    display: block;
+}
+
+.page h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #374151;
+    margin: 32px 0 16px 0;
+}
+
+.page p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
+/* 소개 페이지 스타일 */
+.intro-content {
+    max-width: 100%;
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 40px;
+}
+
+.founder-illustration {
+    text-align: center;
+    margin: 48px 0;
+}
+
+.founder-illustration svg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 타임라인 스타일 */
+.timeline-container {
+    margin-top: 32px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 1px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -44px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border: 4px solid #fef7f0;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.timeline-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.timeline-image {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.timeline-image:hover img {
+    transform: scale(1.02);
+}
+
+/* 폼 스타일 */
+.form {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(229, 231, 235, 0.8);
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #d97706;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3);
+}
+
+/* 성공 메시지 */
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    color: #059669;
+    padding: 16px 24px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    font-weight: 500;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #fef7f0 0%, #fdf2f8 100%);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9ca3af;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.modal h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+/* 관리자 페이지 스타일 */
+.admin-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #fef7f0 0%, #fdf2f8 50%, #fef3c7 100%);
+    z-index: 1500;
+    overflow-y: auto;
+    padding: 24px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    padding: 48px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(217, 119, 6, 0.1);
+}
+
+.admin-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logout-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.admin-nav-btn {
+    background: rgba(255, 255, 255, 0.8);
+    color: #6b7280;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-btn.active {
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(217, 119, 6, 0.3);
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+/* 관리자 봉사활동 스타일 */
+.volunteer-add-form {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.volunteer-add-form h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 24px;
+}
+
+.admin-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.volunteer-list h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 24px;
+}
+
+.admin-volunteer-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.admin-volunteer-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.admin-volunteer-item h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 12px;
+    padding-right: 120px;
+}
+
+.volunteer-date-display {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.1);
+    padding: 6px 12px;
+    border-radius: 16px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.admin-volunteer-item p {
+    color: #6b7280;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.volunteer-admin-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.edit-volunteer-btn, .delete-volunteer-btn {
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.edit-volunteer-btn {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.edit-volunteer-btn:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.delete-volunteer-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.delete-volunteer-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+.cancel-edit-btn {
+    background: rgba(107, 114, 128, 0.1);
+    color: #6b7280;
+    margin-left: 12px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cancel-edit-btn:hover {
+    background: #6b7280;
+    color: white;
+}
+
+/* 소개 페이지 편집 폼 */
+.intro-edit-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.intro-edit-form h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #1f2937;
+    margin-bottom: 24px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 16px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin: 16px 0;
+        padding: 24px 0;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 20px 0;
+    }
+    
+    .page {
+        padding: 24px;
+    }
+    
+    .admin-container {
+        padding: 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-button-container {
+        top: 16px;
+        right: 16px;
+    }
+    
+    #adminBtn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .page h2 {
+        font-size: 1.75rem;
+    }
+    
+    .splash-logo {
+        font-size: 2.5rem;
+    }
+    
+    .admin-nav {
+        flex-wrap: wrap;
+    }
+    
+    .volunteer-admin-buttons {
+        position: static;
+        margin-top: 16px;
+        justify-content: flex-end;
+    }
+    
+    .admin-volunteer-item h5 {
+        padding-right: 0;
+    }
+} 
